@@ -1,5 +1,5 @@
 console.log('hola');
-
+let bodyModal = document.querySelector('.modal-body');
 const modal = document.getElementById('myModal');
 
 (() => {
@@ -93,7 +93,7 @@ const casosConfirmados = (datos) => {
 
 const getDataPais = async (pais) => {
 
-    let bodyModal = document.querySelector('.modal-body');
+    
     try {
         const respuesta = await fetch(`http://localhost:3000/api/countries/${pais}`);
         const respuestaJson = await respuesta.json();
