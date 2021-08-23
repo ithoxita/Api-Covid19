@@ -1,6 +1,7 @@
-console.log('hola');
+//console.log('hola');
 let bodyModal = document.querySelector('.modal-body');
-const modal = document.getElementById('myModal');
+let tituloModal = document.querySelector('.modal-title');
+
 
 (() => {
 
@@ -101,7 +102,7 @@ const getDataPais = async (pais) => {
         const { data } = await respuestaJson;        
         console.log(data);
 
-        if(data.location == undifined)throw "Error simpatico: Info solicitada en estos momentos no se encuentra disponible";
+        if (data.location == undefined) throw "La información solicitada en estos momentos no se encuentra disponible.";
 
         bodyModal.innerHTML = `<div id="chartContainerPais" style="height: 300px; width: 100%;"></div>`;
         
@@ -139,10 +140,10 @@ const getDataPais = async (pais) => {
     } catch (error) {
         console.error(error);
         bodyModal.style.textAlign= 'center';
-        bodyModal.style.backgroundColor='#7fffd4';
+        bodyModal.style.backgroundColor='#FCF3CF';
 
-        bodyModal.innerHTML = `<img src="https://m.media-amazon.com/images/I/61B8MqUatSL._AC_SX466_.jpg" width= "200px">
-        <p><mark><strong>${error}</strong></mark></p>`;
+        bodyModal.innerHTML = `<img src="http://localhost:3000/covid19/assets/img/signoExclamacion.png" >
+        <p><strong>${error}</strong></p>`;
     }
 
 }
